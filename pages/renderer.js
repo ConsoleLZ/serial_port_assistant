@@ -24,17 +24,9 @@ async function listSerialPorts() {
   });
 }
 
-function listPorts() {
-  listSerialPorts();
-  setTimeout(listPorts, 2000);
-}
-
 // Set a timeout that will check for new serialPorts every 2 seconds.
 // This timeout reschedules itself.
-setTimeout(listPorts, 2000);
-
-listSerialPorts();
-
+setTimeout(listSerialPorts, 2000);
 
 const port = new SerialPort({ path: "COM9", baudRate: 115200 });
 

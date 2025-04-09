@@ -4,11 +4,28 @@
   "description": "A minimal Electron application with node serialport",
   "main": "main.js",
   "scripts": {
-    "start": "nodemon --exec electron ."
+    "start": "nodemon --exec electron .",
+    "build": "electron-builder"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:serialport/electron-serialport.git"
+  },
+  "build": {
+    "appId": "com.electron.serialport",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    }
   },
   "keywords": [
     "Electron",
@@ -21,6 +38,7 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^26.4.0",
+    "electron-builder": "^26.0.12",
     "nodemon": "^3.1.9"
   },
   "dependencies": {
