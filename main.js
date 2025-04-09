@@ -12,6 +12,7 @@ function createWindow() {
         width: 800,
         height: 600,
         backgroundColor: "#ccc",
+        autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true, // to allow require
             contextIsolation: false, // allow use with Electron 12+
